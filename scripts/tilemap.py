@@ -10,6 +10,7 @@ NEIGHBOR_OFFSETS = [(-1,0), (-1, -1), (0, -1), (1, -1), (1,0), (0,0), (-1,1), (0
 PHYSICS_TILES = {'grass', 'stone'}
 
 import pygame
+import random
 
 class Tilemap:  
     def __init__(self, game, tile_size=16):
@@ -20,7 +21,25 @@ class Tilemap:
 
         for i in range(10):
             self.tilemap[str(3 + i) + ';10'] = {'type': 'grass', 'variant': 1, 'pos': (3 + i, 10)}
-            #self.tilemap['10;' + str(5 + i)] = {'type': 'stone', 'variant': 1, 'pos': (10, 5 + i)}            
+        
+        
+        for i in range(3):
+            spawnChance = random.randint(0,10)
+            if(spawnChance < 5):
+                pass
+            elif(spawnChance >= 5 & spawnChance < 8):
+                pass
+                # spawn 1 platform
+            elif(spawnChance >= 8 & spawnChance < 9):
+                pass
+                # spawn 2 platforms
+            else:
+                # spawn 3 platforms
+                pass
+            
+
+
+
 
     def render(self, surf, offset=(0,0)):
         for x in range(offset[0] // self.tile_size, (offset[0] + surf.get_width()) // self.tile_size + 1):
