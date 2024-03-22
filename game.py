@@ -92,7 +92,7 @@ class Game:
             
             # constant jumping
             if(self.player.velocity[1] == 0):
-                self.player.velocity[1] = -3
+                self.player.velocity[1] = -4
             
             for i in range(len(self.platforms)):
                 block = pygame.draw.rect(self.screen, (0,0,0), self.platforms[i])

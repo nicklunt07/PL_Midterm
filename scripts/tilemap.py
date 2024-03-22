@@ -20,22 +20,23 @@ class Tilemap:
         self.offgrid_tiles = []
 
         for i in range(10):
-            self.tilemap[str(3 + i) + ';10'] = {'type': 'grass', 'variant': 1, 'pos': (3 + i, 10)}
+            self.tilemap[str(0 + i) + ';10'] = {'type': 'grass', 'variant': 1, 'pos': (0 + i, 10)}
         
-        
-        for i in range(3):
-            spawnChance = random.randint(0,10)
-            if(spawnChance < 5):
-                pass
-            elif(spawnChance >= 5 & spawnChance < 8):
-                pass
-                # spawn 1 platform
-            elif(spawnChance >= 8 & spawnChance < 9):
-                pass
-                # spawn 2 platforms
-            else:
-                # spawn 3 platforms
-                pass
+        for j in range(-100, 10, 3):
+            for i in range(3):
+                spawnChance = random.randint(0,10)
+                if(spawnChance < 5):
+                    pass
+                elif(spawnChance >= 5 & spawnChance < 8):
+                    pass
+                    # spawn 1 platform
+                    self.tilemap[str(i) + ';' + str(j)] = {'type': 'grass', 'variant': 1, 'pos': (i, j)}
+                elif(spawnChance >= 8 & spawnChance < 9):
+                    pass
+                    # spawn 2 platforms
+                else:
+                    # spawn 3 platforms
+                    pass
             
 
 
