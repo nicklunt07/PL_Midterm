@@ -22,22 +22,12 @@ class Tilemap:
         for i in range(10):
             self.tilemap[str(0 + i) + ';10'] = {'type': 'grass', 'variant': 1, 'pos': (0 + i, 10)}
         
-        for j in range(-100, 10, 3):
-            for i in range(3):
+        for j in range(-1000, 10, 4):
+            for i in range(20):
                 spawnChance = random.randint(0,10)
-                if(spawnChance < 5):
-                    pass
-                elif(spawnChance >= 5 & spawnChance < 8):
-                    pass
+                if(spawnChance >= 8):
                     # spawn 1 platform
                     self.tilemap[str(i) + ';' + str(j)] = {'type': 'grass', 'variant': 1, 'pos': (i, j)}
-                elif(spawnChance >= 8 & spawnChance < 9):
-                    pass
-                    # spawn 2 platforms
-                else:
-                    # spawn 3 platforms
-                    pass
-            
 
 
 
