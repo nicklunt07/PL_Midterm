@@ -1,7 +1,6 @@
 # Pygame Project
-# Benjamin Weidner
+# Nick Lunt
 # ProgLang
-# 2/13/2024
 
 # entities.py
 

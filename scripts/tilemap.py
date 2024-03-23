@@ -1,13 +1,11 @@
 # Pygame Project
-# Benjamin Weidner
-# edited Nick Lunt 2.27.24
+# Nick Lunt
 # ProgLang
-# 2/15/2024
 
 # tilemap.py
 
 NEIGHBOR_OFFSETS = [(-1,0), (-1, -1), (0, -1), (1, -1), (1,0), (0,0), (-1,1), (0,1), (1,1)]
-PHYSICS_TILES = {'grass', 'stone'}
+PHYSICS_TILES = {'bricks'}
 
 import pygame
 import random
@@ -19,15 +17,21 @@ class Tilemap:
         self.tilemap = {}
         self.offgrid_tiles = []
 
-        for i in range(10):
-            self.tilemap[str(0 + i) + ';10'] = {'type': 'grass', 'variant': 1, 'pos': (0 + i, 10)}
+        for i in range(20):
+            self.tilemap[str(0 + i) + ';10'] = {'type': 'bricks', 'variant': 0, 'pos': (0 + i, 10)}
+            self.tilemap[str(0 + i) + ';11'] = {'type': 'bricks', 'variant': 0, 'pos': (0 + i, 11)}
+            self.tilemap[str(0 + i) + ';12'] = {'type': 'bricks', 'variant': 0, 'pos': (0 + i, 12)}
+            self.tilemap[str(0 + i) + ';13'] = {'type': 'bricks', 'variant': 0, 'pos': (0 + i, 13)}
+            self.tilemap[str(0 + i) + ';14'] = {'type': 'bricks', 'variant': 0, 'pos': (0 + i, 14)}
+
+
         
-        for j in range(-1000, 10, 4):
+        for j in range(-10000, 10, 4):
             for i in range(20):
                 spawnChance = random.randint(0,10)
                 if(spawnChance >= 8):
                     # spawn 1 platform
-                    self.tilemap[str(i) + ';' + str(j)] = {'type': 'grass', 'variant': 1, 'pos': (i, j)}
+                    self.tilemap[str(i) + ';' + str(j)] = {'type': 'bricks', 'variant': 1, 'pos': (i, j)}
 
 
 
